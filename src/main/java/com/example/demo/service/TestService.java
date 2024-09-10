@@ -1,12 +1,14 @@
 package com.example.demo.service;
 
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
 @Service
 public class TestService {
-    @NonNull
-    private String test;
+    private final String test;
+
+    @Autowired
+    public TestService(String test) {
+        this.test = test;
+    }
 }
